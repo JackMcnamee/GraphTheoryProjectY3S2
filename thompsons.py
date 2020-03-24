@@ -2,6 +2,8 @@
 # Thompson's Construction Algorithm
 # converts a regular expression into an equivalent NFA
 
+from shunting_yard.py import shunting
+
 class State:
     """
     A state with one or two edges, 

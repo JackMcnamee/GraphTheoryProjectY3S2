@@ -22,3 +22,71 @@ class Fragment:
         self.start_state = start_state
         # accept state
         self.accept_state = accept_state
+
+def thompsons(infix):
+    """ Return an NFA fragment representing the infix regular expression """
+
+    # convert infix to postfix
+    postfix = shunting(infix)
+    # make postfix a stack of characters
+    postfix = list(postfix)[::-1]
+
+    # a stack for NFA fragments
+    nfa_stack = []
+
+    while postfix:
+        # pop a character from postfix
+        c = postfix.pop()
+        if c == '.':
+            # pop two fragments off the stack
+            fragOne = nfa_stack.pop()
+            fragTwo = nfa_stack.pop()
+            
+            # point fragTwo accept state at fragOne start state
+            fragTwo.accept.edges.append(fragOne.start)
+            # new start state is fragTwo
+            start = fragTwo.start
+            # new accept state is fragOne
+            accept = fragOne.accept
+
+        elif c == '|':
+            # pop two fragments off the stack
+            fragOne = nfa_stack.pop()
+            fragTwo = nfa_stack.pop()
+
+            # create new start and accept state
+            accept = State()
+            start = State(edges=[fragTwo.start, fragOne.start])
+            # point the old accept states at the new one
+            fragTwo.accept.edges.append(accept)
+            fragOne.accept.edges.append(accept)
+
+        elif c == '*':
+            # pop a single fragment off the stack
+            frag = nfa_stack.pop()
+
+            # create new start and accept states
+            accept = Start()
+            start = State(edges=[frag.start, accept])
+
+            # point the arrows
+            frag.accept.edges = ([frag.start, accept])
+
+        else:
+            accept = State()
+            start = State(label=c, edges=[accept])
+
+        # create new instance of Fragment to represent the new NFA
+        newFrag = Fragment(start, accept)
+
+        # push the new NFA to the NFA stack
+        nfa_stack.append(newFrag)
+
+    return nfa_stack.pop()
+
+
+
+
+
+
+

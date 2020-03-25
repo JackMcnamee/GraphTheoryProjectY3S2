@@ -84,6 +84,18 @@ def thompsons(infix):
 
     return nfa_stack.pop()
 
+# add a state to a set, and follow all of the epsilon arrows
+def follows(state, current):
+    # only if state has not been seen
+    if state not in current:
+        # put this state into current
+        current.add(state)
+        # if state is labelled by e(psilon)
+        if state.label is None:
+            # loop through states pointed to by this state
+            for x in state.edges:
+                # follow their e(psilon)s
+                follows(x, current)
 
 
 

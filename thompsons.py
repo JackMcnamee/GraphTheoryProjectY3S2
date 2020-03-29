@@ -2,16 +2,16 @@
 # Thompson's Construction Algorithm
 # converts a regular expression into an equivalent NFA
 
-from shunting_yard.py import shunting
+from shunting_yard import shunting
 
 class State:
     """
     A state with one or two edges, 
     all edges labelled by label
     """
-    def __init__(self, edges=[], label=None):
+    def __init__(self, edges=None, label=None):
         # every state has -1, 1 or 2 edges
-        self.edges = edges
+        self.edges = edges if edges else []
         # labels for the arrow, None means epsilon
         self.label = label
     

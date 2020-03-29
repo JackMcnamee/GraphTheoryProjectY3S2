@@ -17,11 +17,11 @@ class State:
     
 class Fragment:
     """ An NFA Fragment with a start state and accept state """
-    def __init__(self, start_state, accept_state):
+    def __init__(self, start, accept):
         # start state
-        self.start_state = start_state
+        self.start = start
         # accept state
-        self.accept_state = accept_state
+        self.accept = accept
 
 def thompsons(infix):
     """ Return an NFA fragment representing the infix regular expression """
@@ -66,7 +66,7 @@ def thompsons(infix):
             frag = nfa_stack.pop()
 
             # create new start and accept states
-            accept = Start()
+            accept = State()
             start = State(edges=[frag.start, accept])
 
             # point the arrows

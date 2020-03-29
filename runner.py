@@ -5,7 +5,7 @@
     match, return true
 """
 
-import thompsons
+from thompsons import thompsons, follows
 
 def match(regex, s):
     # returns true if the regular expression 
@@ -33,7 +33,7 @@ def match(regex, s):
             # only follow arrows not labelled by s
             if state.label is not None:
                 # if the label of the state is equal to the char
-                if state.label == c:
+                if state.label == char:
                     # add the state at end of arrow to current
                     follows(state.edges[0], current)
 

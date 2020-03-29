@@ -37,9 +37,9 @@ def shunting(infix):
             # push any operators on operators[]
             # with higher precedence to the output
             while operators and prec[char] < prec[operators[-1]]:
-                postfix.append(opers.pop())
+                postfix.append(operators.pop())
             # push char to operators[]
-            operators.append(c)
+            operators.append(char)
 
         else:
             # push the char to the output(postfix)

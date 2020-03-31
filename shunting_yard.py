@@ -14,7 +14,7 @@ def shunting(infix):
     postfix = []
 
     # operator precedence
-    prec = {'*':100, '.':80, '|':60, ')':40, '(':20}
+    prec = {'*':60, '?':50, '.':40, '|':30, ')':20, '(':10}
 
     # loop through the input one char at a time
     while infix:

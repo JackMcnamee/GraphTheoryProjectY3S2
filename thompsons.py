@@ -9,8 +9,8 @@ class State:
     A state with one or two edges, 
     all edges labelled by label
     """
-    def __init__(self, edges=None, label=None):
-        # every state has -1, 1 or 2 edges
+    def __init__(self, label=None, edges=None):
+        # every state has 0, 1 or 2 edges
         self.edges = edges if edges else []
         # labels for the arrow, None means epsilon
         self.label = label
@@ -44,6 +44,7 @@ def thompsons(infix):
             
             # point fragTwo accept state at fragOne start state
             fragTwo.accept.edges.append(fragOne.start)
+
             # new start state is fragTwo
             start = fragTwo.start
             # new accept state is fragOne
@@ -57,6 +58,7 @@ def thompsons(infix):
             # create new start and accept state
             accept = State()
             start = State(edges=[fragTwo.start, fragOne.start])
+
             # point the old accept states at the new one
             fragTwo.accept.edges.append(accept)
             fragOne.accept.edges.append(accept)
@@ -72,7 +74,19 @@ def thompsons(infix):
             # point the arrows
             frag.accept.edges = ([frag.start, accept])
 
+        elif c == '?':
+            # pop a single fragment off the stack
+            frag = nfa_stack.pop()
+
+            # create new start and accept states
+            accept = State()
+            start = State(edges=[frag.start, frag.accept])
+
+            # point the old accept state at the new one
+            frag.accept.edges.append(accept)
+
         else:
+            # create new start and accept states
             accept = State()
             start = State(label=c, edges=[accept])
 

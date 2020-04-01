@@ -80,10 +80,21 @@ def thompsons(infix):
 
             # create new start and accept states
             accept = State()
-            start = State(edges=[frag.start, frag.accept])
+            start = State(edges=[frag.start, accept])
 
             # point the old accept state at the new one
             frag.accept.edges.append(accept)
+
+        elif c == '+':
+            # pop a single fragment off the stack
+            frag = nfa_stack.pop()
+
+            # create new start and accept states
+            accept = State()
+            start = frag.start
+
+            # point the arrows
+            frag.accept.edges = ([frag.start, accept])
 
         else:
             # create new start and accept states

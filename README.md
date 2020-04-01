@@ -15,25 +15,22 @@ To complete this project fully and ahead of the deadline I will break this proje
   
 ## Architecture
 ### shunting_yard.py
-This python file will include the Shunting Yard algorithm. This algorithm was invented by Edsger Dijkstra and named the "Shunting Yard" algorithm because its operation resembles that of a railroad shunting yard. 
-The Shunting Yard algorithm is used to parse the regular expression from infix notation to postfix notation.
-An example of this would be:
-Infix Notation: *a.b*
-Postfix Notation: *ab.*
+This python file will include the Shunting Yard algorithm. This algorithm was invented by Edsger Dijkstra and named the "Shunting Yard" algorithm because its operation resembles that of a railroad shunting yard.\
+The Shunting Yard algorithm is used to parse the regular expression from infix notation to postfix notation.\
+An example of this would be:\
+Infix Notation: *a.b*\
+Postfix Notation: *ab.*\
 Converting the regular expression from infix to postfix is implemented here because the computer cannot easily distinguish between the operators and the parenthesis. 
 
 ### thompson.py
-This file will build a series of small NFA'S which will be used to create the overall NFA, using Thompson's Construction to do so. 
+This file will build a series of small NFA'S which will be used to create the overall NFA, using Thompson's Construction to do so.\
 The shunting algorithm created in shunting_yard.py will be imported into this file to convert the infix regular expression to postfix. 
 The thompson algorithm will then return an NFA fragment representing the infix regular expression. It will do this by splitting the regular expression into smaller expressions from which the NFA, equivalent to the regular expression, will be constructed.
 
 ### runner.py
-This file will implement the match algorithm which returns true if, and only if, the regular expression fully matches the string. To do so the file will import the functions created in thompson.py to compile the regular expression into an NFA. The match function will loop through the characters in the string and then check if the NFA matches the string entered by the user.
-Finally the user functionality will be implemented where the user can input a regular expression and 
-a test string to check if the string matches the regular expression. If it does the program will
-return true, else it will return false. 
+This file will implement the match algorithm which returns true if, and only if, the regular expression fully matches the string. To do so the file will import the functions created in thompson.py to compile the regular expression into an NFA. The match function will loop through the characters in the string and then check if the NFA matches the string entered by the user.\
+Finally the user functionality will be implemented where the user can input a regular expression and a test string to check if the string matches the regular expression. If it does the program willreturn true, else it will return false. 
 
 ## How To Run Program
 cd GraphTheoryProjectY3S2
-
 vi runner.py

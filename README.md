@@ -20,7 +20,7 @@ The Shunting Yard algorithm is used to parse the regular expression from infix n
 An example of this would be:\
 Infix Notation: *a.b*\
 Postfix Notation: *ab.*\
-Converting the regular expression from infix to postfix is implemented here because the computer cannot easily distinguish between the operators and the parenthesis. 
+Converting the regular expression from infix to postfix is implemented here because the computer cannot easily distinguish between the operators and the parenthesis. This is done by creating a stack which will reverse the order of the operators of the regular expression.
 
 ### thompson.py
 This file will build a series of small NFA'S which will be used to create the overall NFA, using Thompson's Construction to do so.\
@@ -56,7 +56,7 @@ python3 runner.py
 1) *abbb*
 2) *bbbb*
 3) *b*
-4) *abab*
+4) *abb*
 
 ### Results
 1) False
@@ -69,14 +69,15 @@ Dr. Ian McLoughlin's LearnOnline Tutorials
 
 ### Thompson's Construction
 https://en.wikipedia.org/wiki/Thompson%27s_construction
+https://swtch.com/~rsc/regexp/regexp1.html
 
 ### Shunting Yard Algorithm
 https://brilliant.org/wiki/shunting-yard-algorithm/
+https://www.youtube.com/watch?v=y_snKkv0gWc
 
 ### Regular Expressions
 https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/re.html
 https://www.regular-expressions.info/
-https://swtch.com/~rsc/regexp/regexp1.html
 
 ### NFA
 https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton

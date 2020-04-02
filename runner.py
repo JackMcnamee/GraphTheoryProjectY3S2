@@ -41,7 +41,7 @@ def match(regex, s):
     return nfa.accept in current
 
 # welcoming message to user
-print("Welcome to my Graph Theory Project")
+print("Welcome to my Graph Theory Project - Jack McNamee")
 print("Here you can check if a regular expression matches a string")
 
 # initialize exitProgram as empty string
@@ -60,10 +60,10 @@ while exitProgram != 'quit':
     testString = input()
 
     # prints true or false
-    print(match(regularExpression, testString))
+    print("Result is:", match(regularExpression, testString))
 
     # ask user if they want to continue or exit
-    print("Enter 1 to try again or quit to exit: ")
+    print("Enter any key to try again or type quit to exit: ")
     exitProgram = input()
 
 # message for user when they are finished (entered 'quit')

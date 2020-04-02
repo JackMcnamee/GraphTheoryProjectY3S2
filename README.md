@@ -68,19 +68,19 @@ python3 runner.py
 Dr. Ian McLoughlin's LearnOnline Tutorials
 
 ### Thompson's Construction
-https://en.wikipedia.org/wiki/Thompson%27s_construction
-https://swtch.com/~rsc/regexp/regexp1.html
+https://en.wikipedia.org/wiki/Thompson%27s_construction \
+https://swtch.com/~rsc/regexp/regexp1.html 
 
 ### Shunting Yard Algorithm
-https://brilliant.org/wiki/shunting-yard-algorithm/
+https://brilliant.org/wiki/shunting-yard-algorithm/ \
 https://www.youtube.com/watch?v=y_snKkv0gWc
 
 ### Regular Expressions
-https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/re.html
+https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/re.html \
 https://www.regular-expressions.info/
 
 ### NFA
-https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton
+https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton \
 https://people.cs.clemson.edu/~goddard/texts/theoryOfComputation/3a.pdf
 
 

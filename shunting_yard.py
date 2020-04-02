@@ -28,7 +28,7 @@ def shunting(infix):
 
         elif char == ')':
             # pop operators[] until an open bracket is found
-            while opers[-1] != '(':
+            while operators[-1] != '(':
                 postfix.append(operators.pop())
             # remove the open bracket
             operators.pop()

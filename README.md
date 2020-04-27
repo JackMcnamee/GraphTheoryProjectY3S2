@@ -70,6 +70,24 @@ python3 runner.py
 3) True
 4) False
 
+## How To Run Tests
+Install Python on your computer
+```
+https://www.python.org/downloads/
+```
+Clone this repository
+```
+git clone https://github.com/JackMcnamee/GraphTheoryProjectY3S2
+```
+Enter the directory
+```
+cd GraphTheoryProjectY3S2
+```
+Run tests
+```
+python3 -m unittest discover -s tests
+```
+
 ## References
 Dr. Ian McLoughlin's LearnOnline Tutorials
 

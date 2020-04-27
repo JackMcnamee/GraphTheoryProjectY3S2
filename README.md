@@ -3,10 +3,12 @@
 ## Introduction
 This is a program, written in Python, that uses an algorithm known as Thompson's Construction. Thompson's Construction, named after Ken Thompson, transforms the regular expression given into an equivalent Non-Deterministic Finite Automaton (NFA). This NFA then matches strings against the regular expression.
 
-A regular expression is a string containing a number of characters. Special characters can be included such as . for *concatenate*, | for *or*, * for *zero or more than one*, + for *at least one of*, ? for *zero or one of* and () for *grouping*.
+In a Deterministic Finite Automaton (DFA) you can determine the state to which the machine will move for each input symbol. However, in a Non-Deterministic Finite Automaton (NFA), the state the machine moves to cannot be determined as it can move to any combination of states in the machine.
+
+A regular expression is a string containing several characters. Special characters can be included such as . for *concatenate*, | for *or*, * for *zero or more than one*, + for *at least one of*, ? for *zero or one of* and () for *grouping*.
 
 ## Planning
-To complete this project fully and ahead of the deadline I will break this project into numerous steps so it becomes easier to solve.
+To complete this project fully and ahead of the deadline I will break this project into numerous steps, so it becomes easier to solve.
   1) Work on the Shunting Yard Algorithm which returns the infix regular expression in postfix notation
   2) Create the overall NFA which consists of several smaller NFA's of the regular expression
   3) Implement the matching algorithm which will return true if the regular expression fully matches the string
@@ -32,6 +34,10 @@ This file will implement the match algorithm which returns true if, and only if,
 Finally the user functionality will be implemented where the user can input a regular expression and a test string to check if the string matches the regular expression. If it does the program will return true, else it will return false. 
 
 ## How To Run Program
+Install Python on your computer
+```
+https://www.python.org/downloads/
+```
 Clone this repository
 ```
 git clone https://github.com/JackMcnamee/GraphTheoryProjectY3S2

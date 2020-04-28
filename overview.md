@@ -68,6 +68,48 @@ python3 -m unittest discover -s tests
 ### Shunting Yard Algorithm
 The Shunting Yard algorithm is used in the program to convert the regular expression, entered by the user, from infix notation to postfix notation. This is done so the computer can more easily evaluate the regular expression. \
 
+### How to convert from infix notation to postfix notation
+We will work from left to right on the infix expression to convert it to a postfix expression
+![1st step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/1.jpg)
+
+Add the opening bracket to the operator stack as it is an operator
+![2nd step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/2.jpg)
+
+Add a to postfix as it is a character
+![3rd step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/3.jpg)
+
+Add the or operator to the operator stack
+![4th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/4.jpg)
+
+Add b to postfix and pop everything off the operator stack as there is a closing bracket, adding the or operator to postfix
+![5th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/5.jpg)
+
+Add the and operator to the operator stack
+![6th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/6.jpg)
+
+Add the opening bracket to the operator stack
+![7th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/7.jpg)
+
+Add a to postfix
+![8th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/8.jpg)
+
+Add the kleene star to the operator stack
+![9th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/9.jpg)
+
+As the kleene star has higher precedence, pop it off and add the or operator to the operator stack
+![10th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/10.jpg)
+
+Add b to postfix
+![11th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/11.jpg)
+
+Add the kleene star to the operator stack
+![12th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/12.jpg)
+
+As there is a closing bracket, pop everything off the operator stack until you get to the opening bracket
+![13th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/13.jpg)
+
+Finally, add the and operator to postfix
+![14th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/14.jpg)
 
 
 ### Thompson's Construction

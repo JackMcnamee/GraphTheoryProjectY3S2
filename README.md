@@ -107,4 +107,8 @@ https://www.regular-expressions.info/
 https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton \
 https://people.cs.clemson.edu/~goddard/texts/theoryOfComputation/3a.pdf
 
+### Command Line Arguments
+https://docs.python.org/3/library/argparse.html
+https://stackabuse.com/command-line-arguments-in-python/
+
 

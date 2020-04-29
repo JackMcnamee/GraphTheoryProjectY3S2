@@ -66,7 +66,7 @@ python3 -m unittest discover -s tests
 
 ## Algorithms
 ### Shunting Yard Algorithm
-The Shunting Yard algorithm is used in the program to convert the regular expression, entered by the user, from infix notation to postfix notation. This is done so the computer can more easily evaluate the regular expression. \
+The Shunting Yard algorithm is used in the program to convert the regular expression, entered by the user, from infix notation to postfix notation. This is done so the computer can more easily evaluate the regular expression.
 
 ### How to convert from infix notation to postfix notation
 We will work from left to right on the infix expression to convert it to a postfix expression
@@ -113,9 +113,15 @@ Finally, add the and operator to postfix
 
 
 ### Thompson's Construction
+This algorithm is used to convert a regular expression into an NFA.\
 
+For a normal character x, or a empty regular expression ϵ, push the fragment to the stack
 
-### Matching Algorithm
+For a . (concatenation), pop two fragments from the stack and push this to the stack
+
+For a | (or), pop two fragments from the stack and push this to the stack
+
+For a * (kleene star), pop a fragment from the stack and push this to the stack
 
 
 ## References

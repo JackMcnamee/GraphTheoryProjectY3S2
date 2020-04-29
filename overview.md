@@ -68,7 +68,7 @@ python3 -m unittest discover -s tests
 ### Shunting Yard Algorithm
 The Shunting Yard algorithm is used in the program to convert the regular expression, entered by the user, from infix notation to postfix notation. This is done so the computer can more easily evaluate the regular expression.
 
-### How to convert from infix notation to postfix notation
+#### How to convert from infix notation to postfix notation
 We will work from left to right on the infix expression to convert it to a postfix expression
 ![1st step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/1.jpg)
 
@@ -115,25 +115,29 @@ Finally, add the and operator to postfix
 ### Thompson's Construction
 This algorithm is used to convert a regular expression into an NFA.\
 
-For a normal character x, or a empty regular expression ϵ, push the fragment to the stack
+For a normal character x, or an empty regular expression ϵ, push the fragment to the stack
+![1st step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/a.jpg)
 
-For a . (concatenation), pop two fragments from the stack and push this to the stack
+For a . *(concatenation)*, pop two fragments from the stack and push this to the stack
+![2nd step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/b.jpg)
 
-For a | (or), pop two fragments from the stack and push this to the stack
+For a | *(or)*, pop two fragments from the stack and push this to the stack
+![3rd step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/c.jpg)
 
-For a * (kleene star), pop a fragment from the stack and push this to the stack
+For a * *(kleene star)*, pop a fragment from the stack and push this to the stack
+![4th step](https://github.com/JackMcnamee/GraphTheoryProjectY3S2/blob/master/Images/d.jpg)
 
 
 ## References
-Dr. Ian McLoughlin's LearnOnline Tutorials
-
-### Thompson's Construction
-https://en.wikipedia.org/wiki/Thompson%27s_construction \
-https://swtch.com/~rsc/regexp/regexp1.html 
+Dr. Ian McLoughlin's LearnOnline Tutorials 
 
 ### Shunting Yard Algorithm
 https://brilliant.org/wiki/shunting-yard-algorithm/ \
 https://www.youtube.com/watch?v=y_snKkv0gWc
+
+### Thompson's Construction
+https://en.wikipedia.org/wiki/Thompson%27s_construction \
+https://swtch.com/~rsc/regexp/regexp1.html
 
 ### Regular Expressions
 https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/re.html \

@@ -3,7 +3,7 @@
 ## Introduction
 This is a program, written in Python, that uses an algorithm known as Thompson's Construction. Thompson's Construction, named after Ken Thompson, transforms the regular expression given into an equivalent Non-Deterministic Finite Automaton (NFA). This NFA then matches strings against the regular expression.
 
-In a Deterministic Finite Automaton (DFA) you can determine the state to which the machine will move for each input symbol. However, in a Non-Deterministic Finite Automaton (NFA), the state the machine moves to cannot be determined as it can move to any combination of states in the machine.
+In a Deterministic Finite Automaton (DFA) you can determine the state to which the machine will move for each input symbol. However, in a Non-Deterministic Finite Automaton (NFA), the state the machine moves to cannot be determined as it can move to any combination of states in the machine. This helps to allow the user to express what they are looking for in a more easier way, as the NFA can choose between many paths.
 
 A regular expression is a string containing several characters. Special characters can be included such as . for *concatenate*, | for *or*, * for *zero or more than one*, + for *at least one of*, ? for *zero or one of* and () for *grouping*.
 
@@ -29,8 +29,11 @@ This file will build a series of small NFA'S which will be used to create the ov
 The shunting algorithm created in shunting_yard.py will be imported into this file to convert the infix regular expression to postfix.\
 The thompson function will then return an NFA fragment representing the infix regular expression. It will do this by splitting the regular expression into smaller expressions from which the NFA, equivalent to the regular expression, will be constructed.
 
-### runner.py
+### match.py
 This file will implement the match algorithm which returns true if, and only if, the regular expression fully matches the string. To do so the file will import the functions created in thompson.py to compile the regular expression into an NFA. The match function will loop through the characters in the string and then check if the NFA matches the string entered by the user.\
+
+### runner.py
+This file will call the match algorithm to check if the user's regular expression and string match.\
 Finally the user functionality will be implemented where the user can input a regular expression and a test string to check if the string matches the regular expression. If it does the program will return true, else it will return false. 
 
 ## How To Run Program
@@ -70,24 +73,6 @@ python3 runner.py
 3) True
 4) False
 
-## How To Run Tests
-Install Python on your computer
-```
-https://www.python.org/downloads/
-```
-Clone this repository
-```
-git clone https://github.com/JackMcnamee/GraphTheoryProjectY3S2
-```
-Enter the directory
-```
-cd GraphTheoryProjectY3S2
-```
-Run tests
-```
-python3 -m unittest discover -s tests
-```
-
 ## References
 Dr. Ian McLoughlin's LearnOnline Tutorials
 
@@ -106,9 +91,3 @@ https://www.regular-expressions.info/
 ### NFA
 https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton \
 https://people.cs.clemson.edu/~goddard/texts/theoryOfComputation/3a.pdf
-
-### Command Line Arguments
-https://docs.python.org/3/library/argparse.html
-https://stackabuse.com/command-line-arguments-in-python/
-
-

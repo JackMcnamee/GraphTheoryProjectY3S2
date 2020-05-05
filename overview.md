@@ -61,7 +61,7 @@ cd GraphTheoryProjectY3S2
 ```
 Run tests
 ```
-python3 -m unittest discover -s tests
+python3 -m unittest discover -s tests -v
 ```
 
 ## Algorithms
